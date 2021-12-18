@@ -57,14 +57,6 @@ export default {
   components:{
     Header,
   },
-	name: "App",
-	watch: {
-		$route: {
-			immediate: true,
-			handler(to, from) {
-				document.title = to.meta.title || "Rpg Armory";
-			},
-		},
-	},
+
 };
 </script>
