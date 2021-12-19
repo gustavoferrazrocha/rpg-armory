@@ -12,7 +12,7 @@
 
       <!-- Sizes your content based upon application components -->
       <v-main>
-
+        <div class="banner"></div>
         <!-- Provides the application the proper gutter -->
         <v-container fluid>
 
@@ -37,6 +37,11 @@
 	color: #2c3e50;
 }
 
+.banner {
+    background-image: url(https://media.dnd.wizards.com/styles/second_hubpage_banner/public/images/head-banner/NEW-TO-DnD_What-is-DnD_Subsection_Hero_140718.jpg);
+    height: 21vw;
+    background-repeat: round;
+}
 #nav {
 	padding: 30px;
 }
