@@ -3,19 +3,21 @@
     <div class="container">
       <div class="header-logo">
         <button  class="header-logo-btn">
+          <router-link to='/'>
           <img class="logo-header" src="../assets/logo.png" alt="">
           <span class="header-title">Rpg Armory</span>
+          </router-link>
         </button>
       </div>
       <div class="nav-list">
         <ul>
-          <a href="#">
+          <a href="/weapons">
             <li>Armas</li>
           </a>
-          <a href="#">
+          <a href="/armors">
             <li>Armaduras</li>
           </a>
-          <a href="#">
+          <a href="/trinket">
             <li>Bugigangas</li>
           </a>
           <a href="#">
@@ -40,15 +42,17 @@ export default {
 .site-header{
   min-width: 100%;
 }
-.header-logo-btn{
-  display: flex;
-  align-items: center;
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 .logo-header{
   max-width: 2rem;
 }
 .header-title{
   font-weight: 900;
+  color: white;
 }
 .container {
     display: flex;
