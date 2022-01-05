@@ -24,6 +24,7 @@
 import axios from "axios";
 
 export default {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
       armors: [],
@@ -42,6 +43,7 @@ export default {
         ],
     };
   },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
     axios
       .get("https://www.dnd5eapi.co/api/equipment-categories/armor")
