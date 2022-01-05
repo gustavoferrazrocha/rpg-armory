@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1>Armors</h1>
+    <h1>equipment</h1>
     <v-card>
       <v-card-title>
         <v-text-field
@@ -35,10 +35,10 @@ export default {
             align: 'start',
             value: 'name',
           },
-          { text: 'Preço', value: 'price' },
-          { text: 'Classe de Armadura (CA)', value: 'armorclass' },
-          { text: 'Força', value: 'stregnth' },
-          { text: 'Furtividade', value: 'furtivity' },
+          { text: 'Preço', value: 'cost.quantity' },
+          { text: 'Classe de Armadura (CA)', value: 'armor_class.base' },
+          { text: 'Força', value: 'str_minimum' },
+          { text: 'Furtividade', value: 'stealth_disadvantage' },
           { text: 'Peso', value: 'weight' },
         ],
     };
@@ -47,11 +47,28 @@ export default {
   mounted() {
     axios
       .get("https://www.dnd5eapi.co/api/equipment-categories/armor")
-      .then((response) => (this.armors = response.data.equipment))
+      .then((response) => {
+        this.getEquipmentData(response.data.equipment)
+      })
       .catch(function (error) {
         console.log(error);
       });
   },
+  methods: {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+      getEquipmentData(equipment){
+        for(let armor of equipment){
+          axios
+      .get(`https://www.dnd5eapi.co${armor.url}`)
+      .then((response) => {
+        this.armors.push(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+        }   
+    }
+  }
 };
 </script>
 
