@@ -39,7 +39,7 @@ export default {
         { text: "Preço", value: "cost.quantity" },
         { text: "Classe de Armadura (CA)", value: "armor_class.base" },
         { text: "Força", value: "str_minimum" },
-        { text: "Furtividade", value: "stealth_disadvantage" },
+        { text: "Desvantagem em Furtividade", value: "stealth_disadvantage" },
         { text: "Peso", value: "weight" },
       ],
     };
